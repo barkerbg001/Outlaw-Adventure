@@ -30,14 +30,14 @@ public class Buttons : MonoBehaviour {
 	{
 		if (transform.name == "Play") {
 			transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Level Select");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
 		} else if (transform.name == "Home") {
 			transform.localScale = new Vector3 (0.6f, 0.6f, 1.0f);
 			UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
 		} else if (transform.name == "Replay") {
 			transform.localScale = new Vector3 (0.6f, 0.6f, 1.0f);
 			//yield return new WaitForSeconds (1);
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Level Select");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
 		} else if (transform.name == "Exit") {
 			transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
 			Quit = true;
@@ -58,19 +58,19 @@ public class Buttons : MonoBehaviour {
 		} else if (transform.name == "Lava Cave") {
 			print ("lava");
 			if (f == true) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+				UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
 			}
 			f = true;
 		} else if (transform.name == "Graveyard") {
 			print ("graveyard");
 			if (f == true) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay1");
+				UnityEngine.SceneManagement.SceneManager.LoadScene("Level2");
 			}
 			f = true;
 		} else if (transform.name == "Frost Park") {
 			print ("Frost Park");
 			if (f == true) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay2");
+				UnityEngine.SceneManagement.SceneManager.LoadScene("Level3");
 			}
 			f = true;
 
