@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stone1Control : MonoBehaviour {
 
 
-	private float Stone_speed,Rotate_speed;
+	private float Stone_speed;
 	public static float Down_speed, Up_speed;
 	private int st;
 	private bool exit;
@@ -18,7 +18,6 @@ public class Stone1Control : MonoBehaviour {
 		Down_speed = 0.6f;
 		Up_speed = 0.4f;
 		Stone_speed = 4.0f;
-		Rotate_speed = 10.0f;
 		st = Random.Range (0, 2);
 		flag = 0;
 		flag1 = 0;
