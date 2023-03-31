@@ -1,13 +1,33 @@
-name: Build Unity Project
+name: Build and Deploy AAB
 
 on:
   push:
-    branches: [ "main"]
-    
+    branches:
+      - main
+
 jobs:
   build:
-    runs-on: windows-latest
-    
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Unity - Builder
-      uses: game-ci/unity-builder@v2.2.0
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Unity
+        uses: game-ci/setup-unity@v1
+        with:
+          unityVersion: 2019.4.28f1
+          modules: android
+          androidTargetSdkVersion: '30'
+
+      - name: Build AAB
+        run: |
+          unity -quit -batchmode -projectPath "$PWD/MyUnityProject" -executeMethod BuildScript.BuildAndroidAAB
+
+    #  - name: Upload AAB to Google Play
+     #   uses: wzieba/gradle-play-publisher-action@v1
+     #   with:
+     #     serviceAccountJson: ${{ secrets.GOOGLE_PLAY_JSON }}
+     #     packageName: com.mycompany.myapp
+     #     bundleFile: ${{ github.workspace }}/MyUnityProject/build/outputs/bundle/release/app-release.aab
+     #     track: internal
