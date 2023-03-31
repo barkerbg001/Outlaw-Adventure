@@ -1,1 +1,13 @@
+name: Build Unity Project
 
+on:
+  push:
+    branches: [ "main"]
+    
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Unity - Builder
+      uses: game-ci/unity-builder@v2.2.0
